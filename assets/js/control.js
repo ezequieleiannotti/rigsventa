@@ -3,7 +3,7 @@ const carrito = document.getElementById("carrito");
 const rigs = document.getElementById("lista-rigs");
 const listaRigs = document.querySelector("#lista-carrito tbody");
 const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
-const comprarCarrito = document.getElementById("Compra");
+
 //Listeners
 cargarEventListeners();
 
@@ -156,5 +156,13 @@ function vaciarLocalStorage() {
 //finalizar la comprar
 //terminar de comprar el carrito de
 
-let compra = getElementById("Compra");
-document.write(compra);
+let comprar = (indice) => {
+  Toastify({
+    text: "Tu compra fue realizada, te llegara el detalle de tu compra por mail",
+    className: "info",
+    style: {
+      background: "black",
+    },
+  }).showToast();
+  setInterval(() => (window.location.href = "../pages/fincompra.html"), 2000);
+};
