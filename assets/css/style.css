@@ -30,7 +30,20 @@
       font-weight: bold;
       cursor: pointer;
       color: white; }
-
+#PrecioEther {
+   color: blue;
+   background-color: white;
+   align-items: center;
+   position: absolute;
+   padding: 20px;
+  font-size: 20px;
+  
+}
+.img1{
+  height: 79px;
+    width: 50px;
+    flex-direction: column;
+}
 .bg-active {
   visibility: visible;
   opacity: 1; }
@@ -603,3 +616,4 @@
     text-align: center;
     background-color: #007bff;
     transition: width .6s ease;
+

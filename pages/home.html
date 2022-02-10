@@ -138,19 +138,101 @@
                 </div>
             </div> 
 <div>
-        <button type="button" onclick="loadDoc()">Rendimiento en Dolares de Cada </button>
+        <button type="button" onclick="loadDoc()">Rendimiento en Dolares de Cada Equipo</button>
         <br><br>
         <table id="USDT"></table>
       
-        </div>  
-    </div>
-   
+        <div class="container" style="">
+            <div class="row"> 
+        <div class="card" style="width: 28rem;">
+            <img src="../assets/images/ethereum (1).png" class="img1" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Precio del Ether al Momento</h5>
+              <p class="card-text">Precio del Ether conectado a la api</p>
+              <script>
+
+                function get_data(url){
+                  var result = '';
+                
+                  var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.overrideMimeType("application/json");
+                  xmlhttp.open("GET",url,false);
+                  xmlhttp.onreadystatechange = function()
+                  {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                    {
+                      result = xmlhttp.responseText;
+                    }
+                  }
+                  xmlhttp.send(null);
+                  result = JSON.parse(result);
+                  return result;
+                }
+                
+                </script>
+                
+                <script language="JavaScript" type="text/javascript" >
+                
+                var url = 'https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT';
+                
+                var data_json = get_data(url);
+                
+                // document.write('<h2><b>Simbolo: </b>' + data_json.symbol + '</h2>');
+                document.write('<h3><b>Precio: </b>' + data_json.price + '</h3>');
+                
+                
+                
+                </script>
+         </div>
+            </div>
+          </div>
+        </div>
+<!-- <div class="card">
+<div id="PrecioEther">
+    <h3>Precio del Ether al Momento</h3>
+    <script>
+
+function get_data(url){
+  var result = '';
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.overrideMimeType("application/json");
+  xmlhttp.open("GET",url,false);
+  xmlhttp.onreadystatechange = function()
+  {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+    {
+      result = xmlhttp.responseText;
+    }
+  }
+  xmlhttp.send(null);
+  result = JSON.parse(result);
+  return result;
+}
+
+</script>
+
+<script language="JavaScript" type="text/javascript" >
+
+var url = 'https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT';
+
+var data_json = get_data(url);
+
+// document.write('<h2><b>Simbolo: </b>' + data_json.symbol + '</h2>');
+document.write('<h3><b>Precio: </b>' + data_json.price + '</h3>'); -->
+
+
+
+</script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
         <script type="text/javascript" src="../assets/js/control.js"></script>
         <script src="./catalog.xml"></script>
         <script src="../assets/js/ajax.js"></script>
+        <script src="../assets/js/dolar.js"></script>
        
+      </div>  
     </body>
     </html>
 
