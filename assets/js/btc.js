@@ -1,4 +1,4 @@
-function get_data(url) {
+function get_data1(url) {
   var result = "";
 
   var xmlhttp = new XMLHttpRequest();
@@ -14,9 +14,9 @@ function get_data(url) {
   return result;
 }
 
-var url = "https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT";
+var url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT";
 
 var data_json = get_data(url);
 
 // document.write('<h2><b>Simbolo: </b>' + data_json.symbol + '</h2>');
-document.write("<h3><b>Precio del Ether: </b>" + data_json.price + "</h3>");
+document.write("<h3><b>Precio del BTC: </b>" + data_json.price + "</h3>");
