@@ -3,6 +3,7 @@ const carrito = document.getElementById("carrito");
 const rigs = document.getElementById("lista-rigs");
 const listaRigs = document.querySelector("#lista-carrito tbody");
 const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
+const preciototal = document.getElementById("preciototal");
 
 //Listeners
 cargarEventListeners();
@@ -28,7 +29,7 @@ function comprarRig(e) {
 
   //Delegation agregar carrito
   if (e.target.classList.contains("agregar-carrito")) {
-    const rig = e.target.parentElement.parentElement;
+    let rig = e.target.parentElement.parentElement;
     //Enviar datos card elemento seleccionado
     leerDatosRig(rig);
   }
